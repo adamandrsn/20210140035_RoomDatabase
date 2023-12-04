@@ -1,4 +1,4 @@
-package com.example.roomdatabase.model
+package com.example.roomdatabase.ui.model
 
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.CreationExtras

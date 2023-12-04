@@ -1,4 +1,4 @@
-package com.example.roomdatabase.model
+package com.example.roomdatabase.ui.model
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -19,7 +19,8 @@ class HomeViewModel(private val repositoriSiswa: RepositoriSiswa): ViewModel(){
         .map { HomeUiState(listSiswa = it.toList()) }
         .stateIn(scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(TIMEOUT_MILLIS),
-            initialValue = HomeUiState())
+            initialValue = HomeUiState()
+        )
 
     data class HomeUiState(
         val listSiswa: List<Siswa> = listOf()
