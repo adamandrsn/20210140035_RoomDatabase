@@ -20,8 +20,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.roomdatabase.R
 import com.example.roomdatabase.navigasi.DestinasiNavigasi
+import com.example.roomdatabase.navigasi.SiswaTopAppBar
 import com.example.roomdatabase.ui.model.DetailSiswa
 import com.example.roomdatabase.ui.model.EntryViewModel
 import com.example.roomdatabase.ui.model.PenyediaViewModel
@@ -45,7 +47,7 @@ fun EntrySiswaScreen(
     Scaffold(
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
-            SiswaTopBar(
+            SiswaTopAppBar(
                 title = stringResource(DestinasiEntry.titleRes),
                 canNavigateBack = true,
                 scrollBehavior = scrollBehavior
