@@ -7,7 +7,9 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.roomdatabase.repositori.RepositoriSiswa
+import com.example.roomdatabase.ui.model.DetailSiswa
 import com.example.roomdatabase.ui.model.UIStateSiswa
+import com.example.roomdatabase.ui.model.toSiswa
 import com.example.roomdatabase.ui.model.toUiStateSiswa
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
@@ -29,6 +31,24 @@ class EditViewModel(
                 .filterNotNull()
                 .first()
                 .toUiStateSiswa(true)
+        }
+    }
+    suspend fun updateSiswa() {
+        if (validasiInput(siswaUiState.detailSiswa)) {
+            repositoriSiswa.updateSiswa(siswaUiState.detailSiswa.toSiswa())
+        }
+        else {
+            println("Data tidak valid")
+        }
+    }
+
+    fun updateUiState(detailSiswa: DetailSiswa) {
+        siswaUiState =
+            UIStateSiswa(detailSiswa = detailSiswa, isEntryValid = validasiInput(detailSiswa))
+    }
+    private fun validasiInput(uiState: DetailSiswa = siswaUiState.detailSiswa ): Boolean {
+        return with(uiState) {
+            nama.isNotBlank() && alamat.isNotBlank() && telpon.isNotBlank()
         }
     }
 }
