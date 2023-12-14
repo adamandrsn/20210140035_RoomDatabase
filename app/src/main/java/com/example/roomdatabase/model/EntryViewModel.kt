@@ -1,4 +1,4 @@
-package com.example.roomdatabase.ui.model
+package com.example.roomdatabase.model
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf

@@ -24,10 +24,10 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.roomdatabase.R
 import com.example.roomdatabase.navigasi.DestinasiNavigasi
 import com.example.roomdatabase.navigasi.SiswaTopAppBar
-import com.example.roomdatabase.ui.model.DetailSiswa
-import com.example.roomdatabase.ui.model.EntryViewModel
+import com.example.roomdatabase.model.DetailSiswa
+import com.example.roomdatabase.model.EntryViewModel
 import com.example.roomdatabase.ui.model.PenyediaViewModel
-import com.example.roomdatabase.ui.model.UIStateSiswa
+import com.example.roomdatabase.model.UIStateSiswa
 import kotlinx.coroutines.launch
 
 object DestinasiEntry: DestinasiNavigasi {
