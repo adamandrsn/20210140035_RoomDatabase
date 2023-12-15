@@ -7,6 +7,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.roomdatabase.repositori.RepositoriSiswa
+import com.example.roomdatabase.ui.ui.halaman.ItemEditDestination
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
@@ -19,7 +20,7 @@ class EditViewModel(
     var siswaUiState by mutableStateOf(UIStateSiswa())
         private set
 
-    private val itemId: Int = 0 //checkNotNull(savedStateHandle[ItemEditDestination.itemIdArg])
+    private val itemId: Int = checkNotNull(savedStateHandle[ItemEditDestination.itemIdArg])
 
     init {
         viewModelScope.launch {
